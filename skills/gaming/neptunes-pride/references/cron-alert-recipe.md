@@ -20,5 +20,5 @@ run — the prompt correctly handles this with "do nothing, send nothing" for no
 - `systemctl status np-mcp` — confirm MCP server is running
 - `tail -f ~/.hermes/profiles/neptune/logs/agent.log | grep cron_` — follow cron agent output
 - `make smoke` from the np-mcp checkout — peek-mode test that won't consume events
-- `hermes -p neptune cron list` — check job status
+- `hermes -p neptune cron list --all` — check job status (`--all` includes paused jobs)
 - `hermes -p neptune cron run "Neptune's Pride Alerts"` — force a manual run

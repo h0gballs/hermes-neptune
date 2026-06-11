@@ -99,7 +99,7 @@ neptune chat                      # ask: "What's my NP game status?"
 The distribution ships a cron job, **Neptune's Pride Alerts**, that runs every 10 minutes: it calls `check_events` on each configured game and messages you only if something changed. It is installed **paused** (Hermes never auto-runs cron jobs from a distribution). Enable it once np-mcp is up:
 
 ```bash
-hermes -p neptune cron list
+hermes -p neptune cron list --all     # paused jobs are hidden without --all
 hermes -p neptune cron resume "Neptune's Pride Alerts"
 ```
 
@@ -168,7 +168,7 @@ Ask it things like:
 | Symptom | Fix |
 |---|---|
 | `mcp_np_mcp_*` tools missing | `systemctl status np-mcp`; confirm `mcp_servers.np-mcp` is in `~/.hermes/profiles/neptune/config.yaml`; `hermes -p neptune gateway restart`; `hermes -p neptune mcp list` |
-| Cron job listed but never fires | It ships paused — `hermes -p neptune cron resume "Neptune's Pride Alerts"`; gateway must be running |
+| Cron job missing from `cron list` / never fires | It ships paused (hidden without `--all`) — `hermes -p neptune cron resume "Neptune's Pride Alerts"`; gateway must be running |
 | First cron run alerted nothing | Expected — first run records a baseline snapshot only |
 | No Telegram messages from cron | Check `TELEGRAM_HOME_CHANNEL` is set and the gateway log: `~/.hermes/profiles/neptune/logs/` |
 | `get_messages` errors | Set `NP_EMAIL`/`NP_PASSWORD` in np-mcp's `.env` and `sudo systemctl restart np-mcp` |
