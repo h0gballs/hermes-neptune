@@ -1,5 +1,5 @@
 name: neptune
-version: 1.1.0
+version: 1.1.2
 description: "Neptune's Pride co-pilot — watches your games via np-mcp and alerts you to incoming attacks, lost stars, research, diplomacy, and turn deadlines."
 hermes_requires: ">=0.16.0"
 author: "h0gballs"
