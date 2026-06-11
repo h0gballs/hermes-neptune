@@ -11,6 +11,7 @@ Monitor and analyze Neptune's Pride games through the `np-mcp` MCP server (https
 - User asks for game status, empire overview, leaderboard, threats, or research.
 - User wants periodic alerts about game events (attacks, stars lost/captured, diplo changes, messages).
 - User asks "what's happening in my NP game" or similar.
+- User asks to set up, update, or reconfigure the np-mcp server, or to add/remove a game ("add my new game", "update np-mcp").
 
 ## Primary Interface: MCP Tools
 
@@ -36,6 +37,9 @@ Call `mcp_np_mcp_get_game_status` (empty `game` param defaults to first configur
 - **Pitfalls & Workarounds:** See [references/pitfalls.md](references/pitfalls.md) for MCP discovery, check_events consumption, and config YAML traps. See [references/mcp-direct-invocation.md](references/mcp-direct-invocation.md) for the raw HTTP fallback path. See [references/cron-alert-recipe.md](references/cron-alert-recipe.md) for the working cron alert setup pattern.
 
 ## Setup & Troubleshooting
+
+### Server Install & Maintenance (agent-driven)
+You can install and maintain the np-mcp server yourself — fresh install, **adding/removing a game** (the most common request: games end, new ones start), updating the server, health checks, and tuning. Follow the exact recipes in [references/server-maintenance.md](references/server-maintenance.md). Service operations need sudo; tell the user before running them.
 
 ### MCP Tools Not Available
 If `mcp_np_mcp_*` tools don't appear in the tool list:

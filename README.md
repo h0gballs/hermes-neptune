@@ -23,6 +23,8 @@ The API key Neptune uses is read-only: it can observe and advise, but only you c
 
 Neptune gets all game data from a locally running np-mcp server.
 
+> **Prefer to delegate?** You can do Steps 2–3 first and then just tell Neptune *"set up np-mcp for me"* — the bundled skill knows the full install recipe (it will ask for your game number + API code, and for sudo when installing the service). The manual steps below do the same thing.
+
 ```bash
 git clone https://github.com/h0gballs/np-mcp ~/git/np-mcp
 cd ~/git/np-mcp
@@ -163,6 +165,11 @@ Ask it things like:
 - *"What am I researching, and what should I queue next?"*
 - *"Read my diplomacy inbox"* — needs NP_EMAIL/NP_PASSWORD in np-mcp's `.env`
 
+It also maintains its own data feed — when a game ends or a new one starts:
+
+- *"Add my new game: np.ironhelmet.com/game/123456789, API code AbCdEf"* — edits np-mcp's config, restarts the service, verifies
+- *"Remove the old game"* / *"Update np-mcp"* — same deal; service restarts need sudo, so expect an approval prompt
+
 ## Troubleshooting
 
 | Symptom | Fix |
@@ -192,7 +199,7 @@ neptune/
 ├── cron/jobs.json             # the 10-minute alert job (ships paused)
 └── skills/gaming/neptunes-pride/
     ├── SKILL.md               # tool guide + game lore
-    └── references/            # pitfalls, cron recipe, API notes, HTTP fallback
+    └── references/            # pitfalls, cron recipe, server maintenance, API notes, HTTP fallback
 ```
 
 Good hunting, and may your weakest star never be the one they jump to. 🔭
