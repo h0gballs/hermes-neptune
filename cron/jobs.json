@@ -3,7 +3,7 @@
     {
       "id": "b5e1a9c4d27f",
       "name": "Neptune's Pride Alerts",
-      "prompt": "Neptune's Pride Alert check:\nUsing the mcp_np_mcp tools, call check_events for each game returned by list_games. If any real events come back, summarize them concisely, most urgent first — focus on immediate threats (incoming attacks), captured/lost stars, research completions, and turn deadlines. For incoming_attack events, call get_threats and include attacker strength vs defending ships and ETA. If there are no events, or the only event is type 'baseline', do nothing and send nothing. No conversational filler, headers, or footers.",
+      "prompt": "Neptune's Pride Alert check:\nUsing the mcp_np_mcp tools, call check_events for each game returned by list_games. If any real events come back, summarize them concisely, most urgent first \u2014 focus on immediate threats (incoming attacks), captured/lost stars, research completions, and turn deadlines. For incoming_attack events, call get_threats and include attacker strength vs defending ships and ETA. If there are no events, or the only event is type 'baseline', do nothing and send nothing. No conversational filler, headers, or footers.",
       "skills": [
         "neptunes-pride"
       ],
@@ -24,12 +24,12 @@
         "times": null,
         "completed": 0
       },
-      "enabled": false,
-      "state": "paused",
+      "enabled": true,
+      "state": "scheduled",
       "paused_at": null,
-      "paused_reason": "Shipped paused by the neptune distribution. Resume once np-mcp is running: hermes -p neptune cron resume \"Neptune's Pride Alerts\"",
+      "paused_reason": null,
       "created_at": null,
-      "next_run_at": null,
+      "next_run_at": "2026-06-11T11:50:00-07:00",
       "last_run_at": null,
       "last_status": null,
       "last_error": null,
@@ -40,5 +40,6 @@
       "workdir": null,
       "profile": null
     }
-  ]
+  ],
+  "updated_at": "2026-06-11T11:41:12.726497-07:00"
 }
