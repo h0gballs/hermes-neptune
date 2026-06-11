@@ -1,0 +1,23 @@
+# --- user data: never ship in the distribution ---
+.env
+auth.json
+memories/
+sessions/
+state.db*
+logs/
+workspace/
+plans/
+home/
+skins/
+local/
+*_cache/
+cron/output/
+cron/*.lock
+
+# --- bundled skill library / curator state: every Hermes install has its own ---
+# Only the Neptune's Pride skill ships with this distribution.
+skills/*
+!skills/gaming/
+skills/gaming/*
+!skills/gaming/DESCRIPTION.md
+!skills/gaming/neptunes-pride/

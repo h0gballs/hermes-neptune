@@ -1,0 +1,30 @@
+name: neptune
+version: 1.0.0
+description: "Neptune's Pride co-pilot — watches your games via np-mcp and alerts you to incoming attacks, lost stars, research, diplomacy, and turn deadlines."
+hermes_requires: ">=0.16.0"
+author: "h0gballs"
+license: "MIT"
+
+# Checked against the installer's shell env and existing .env at install time.
+# NP_EMAIL / NP_PASSWORD are NOT listed here on purpose: they belong in the
+# np-mcp server's own .env (see README), not in this profile.
+env_requires:
+  - name: OPENROUTER_API_KEY
+    description: "OpenRouter API key — the profile's default model provider. Swap provider/model in config.yaml if you use something else."
+    required: true
+  - name: TELEGRAM_BOT_TOKEN
+    description: "Telegram bot token from @BotFather (only if you want the Telegram gateway)"
+    required: false
+    default: ""
+  - name: TELEGRAM_ALLOWED_USERS
+    description: "Comma-separated Telegram user IDs allowed to talk to the bot"
+    required: false
+    default: ""
+  - name: TELEGRAM_HOME_CHANNEL
+    description: "Telegram chat ID where unprompted alerts (cron) are delivered"
+    required: false
+    default: ""
+  - name: BRAVE_SEARCH_API_KEY
+    description: "Brave Search API key for the web toolset (optional)"
+    required: false
+    default: ""

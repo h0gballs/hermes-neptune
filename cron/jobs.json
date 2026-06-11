@@ -1,0 +1,44 @@
+{
+  "jobs": [
+    {
+      "id": "b5e1a9c4d27f",
+      "name": "Neptune's Pride Alerts",
+      "prompt": "Neptune's Pride Alert check:\nUsing the mcp_np_mcp tools, call check_events for each game returned by list_games. If any real events come back, summarize them concisely, most urgent first — focus on immediate threats (incoming attacks), captured/lost stars, research completions, and turn deadlines. For incoming_attack events, call get_threats and include attacker strength vs defending ships and ETA. If there are no events, or the only event is type 'baseline', do nothing and send nothing. No conversational filler, headers, or footers.",
+      "skills": [
+        "neptunes-pride"
+      ],
+      "skill": "neptunes-pride",
+      "model": null,
+      "provider": null,
+      "base_url": null,
+      "script": null,
+      "no_agent": false,
+      "context_from": null,
+      "schedule": {
+        "kind": "cron",
+        "expr": "*/10 * * * *",
+        "display": "*/10 * * * *"
+      },
+      "schedule_display": "*/10 * * * *",
+      "repeat": {
+        "times": null,
+        "completed": 0
+      },
+      "enabled": false,
+      "state": "paused",
+      "paused_at": null,
+      "paused_reason": "Shipped paused by the neptune distribution. Resume once np-mcp is running: hermes -p neptune cron resume \"Neptune's Pride Alerts\"",
+      "created_at": null,
+      "next_run_at": null,
+      "last_run_at": null,
+      "last_status": null,
+      "last_error": null,
+      "last_delivery_error": null,
+      "deliver": "origin",
+      "origin": null,
+      "enabled_toolsets": null,
+      "workdir": null,
+      "profile": null
+    }
+  ]
+}
